@@ -10,14 +10,45 @@
 
     http://localhost:8080/voyager
 
+### Examples
 
-{
-getClientByDocument(document: "456") {
-name
-birthDate
-id
-}
-}
+#### Query:
+    {
+    getClientByDocument(document: "456") {
+            name
+            birthDate
+            id
+        }
+    }
+
+    {
+        getAllClient {
+            name
+            birthDate
+            id
+        }
+    }
+
+#### Mutation:
+    mutation {
+        createClient(
+            client: {
+                name: "joão"
+                document: "11111"
+                birthDate: "2021-09-26T18:23:09.859109546"
+                addressCharge: {
+                    address: "X"
+                    number: 10
+                    district: "district"
+                    city: "city"
+                    federativeUnit: "MG"
+                }
+            }
+        ) {
+            id
+        }
+    }
+
 
 ### Referência 
 https://github.com/profdiovani/mbari

@@ -1,0 +1,8 @@
+type Invoice {
+    id: Int,
+    code: String
+    readingDate: String
+    dueDate: String
+    numberReading: String
+    accountValue: String
+}

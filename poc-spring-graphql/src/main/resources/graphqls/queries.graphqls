@@ -1,3 +1,16 @@
 type Query {
     getClientByDocument(document : String): Client
+
+    getAllClient: [Client]
+
+    getAllInstallation: [Installation]
+}
+
+type Mutation {
+    createClient(client: ClientInput!): Client
+}
+
+schema {
+    query: Query
+    mutation: Mutation
 }

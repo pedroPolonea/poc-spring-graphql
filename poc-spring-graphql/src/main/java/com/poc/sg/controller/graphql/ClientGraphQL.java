@@ -36,24 +36,8 @@ public class ClientGraphQL implements GraphQLMutationResolver, GraphQLQueryResol
 		throw new GraphQLException("Client not found!");
 	}
 
-/*
-	public List<Client> getAllClient() {
-		return clientService.getAll();
-	}
-
-
-
-	@ApiOperation(value = "Register a new customer")
-	@PostMapping(headers = "X-API-VERSION=1")
-	@ResponseStatus(HttpStatus.CREATED)
-	public ResponseEntity<Object> createClient(@RequestBody Client client){
+	public Client createClient(final Client client){
 		log.info("M=createClient, client={}", client);
-
-		Client clientSave = clientService.save(client);
-		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(clientSave.getId()).toUri();
-
-		log.info("M=createClient, clientSave={}", clientSave);
-		return ResponseEntity.created(location).build();
+		return clientService.save(client);
 	}
-*/
 }

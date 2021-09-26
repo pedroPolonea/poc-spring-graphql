@@ -3,3 +3,10 @@ type Client {
     name: String
     birthDate: String
 }
+
+input ClientInput {
+    name: String
+    document: String
+    birthDate: String
+    addressCharge: AddressInput!
+}

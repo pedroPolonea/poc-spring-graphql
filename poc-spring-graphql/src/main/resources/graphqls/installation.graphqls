@@ -1,0 +1,8 @@
+type Installation {
+    id: Int,
+    code: String
+    dataInstallation: String
+    client: Client
+    addressInstallation: Address
+    invoiceList: [Invoice]
+}

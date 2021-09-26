@@ -1,0 +1,17 @@
+type Address {
+    id: Int,
+    address: String
+    number: Int
+    district: String
+    city: String
+    federativeUnit: String
+}
+
+input AddressInput {
+    address: String
+    number: Int
+    district: String
+    city: String
+    federativeUnit: String
+}
+
