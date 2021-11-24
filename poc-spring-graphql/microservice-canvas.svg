@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="yes"?>
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg width="750" height="1400" xmlns="http://www.w3.org/2000/svg">
   <foreignObject x="10" y="10" width="750px" height="1400px">
     <body xmlns="http://www.w3.org/1999/xhtml">
         <style>
@@ -19,161 +19,157 @@
           background-color: #dddddd;
         }
 
-        svg {
-          width: 750px;
-          height: 1400px;
-        }
-
         .b{
             font-weight: bold;
         }
         </style>
 
+        <div style="background-color: #ffffff;">
+            <h2>Order Service canvas</h2>
 
-        <h2>Order Service canvas</h2>
-
-        <table>
-          <tr>
-            <th>Name:</th>
-            <th colspan="2">Order Service</th>
-          </tr>
-          <tr>
-            <td class="b">Description:</td>
-            <td colspan="2">The Order Service provides an API for creating, revising, and cancelling orders.</td>
-          </tr>
-          <tr>
-            <td class="b" colspan="3">Capabilities</td>
-          </tr>
-          <tr>
-            <td colspan="3">Order Management</td>
-          </tr>
-          <tr>
-            <td class="b" colspan="3">Service API</td>
-          </tr>
-          <tr>
-            <td>Commands</td>
-            <td>Queries</td>
-            <td>Events Published</td>
-          </tr>
-          <tr>
-            <td>
-                <dl>
-                    <dt>Synchronous:</dt>
-                        <ul>
-                          <li>createOrder()</li>
-                          <li>reviseOrder()</li>
-                          <li>cancelOrder()</li>
-                        </ul> 
-                    <dt>Asynchronous:</dt>
-                        <ul>
-                          <li>N/A</li>
-                        </ul> 
-                </dl>
-            </td>
-            <td>
-                <dl>
-                    <dt>getOrder()</dt>
-                </dl>
-            </td>
-            <td>
-                <dl>
-                    <dt>Order event channel:</dt>
-                        <ul>
-                          <li>Order Created</li>
-                          <li>Order Authorized</li>
-                          <li>Order Revised</li>
-                          <li>Order Cancelled</li>
-                        </ul> 
-                </dl>
-            </td>
-          </tr>
-          <tr>
-            <td>Non-functional requirements</td>
-            <td colspan="2">
-                <ul>
-                  <li>99.95% availability</li>
-                  <li>1000 orders/second</li>
-                </ul> 
-            </td>
-          </tr>
-          <tr>
-            <td class="b" colspan="3">Observability</td>
-          </tr>
-          <tr>
-            <td colspan="3">Key metrics</td>
-          </tr>
-          <tr>
-            <td colspan="3">
-                <ul>
-                  <li>placed order</li>
-                </ul> 
-            </td>
-          </tr>
-           <tr>
-            <td>Health check endpoint</td>
-            <td colspan="2">
-                /actuator/health
-            </td>
-          </tr>
-          <tr>
-            <td class="b" colspan="3">Implementation</td>
-          </tr>
-          <tr>
-            <td colspan="3">Domain Model</td>
-          </tr>
-          <tr>
-            <td colspan="3">
-                 <ul>
-                  <li>Order aggregate</li>
-                </ul> 
-            </td>
-          </tr>
-          <tr>
-            <td colspan="3">Domain Model</td>
-          </tr>
-          <tr>
-            <td colspan="3">Dependencies</td>
-          </tr>
-          <tr>
-            <td>Invokes</td>
-            <td colspan="2">Subscribes to</td>
-          </tr>
-          <tr>
-            <td>
-                <dl>
-                    <dt>Consumer Service:</dt>
-                        <ul>
-                          <li>validateOrder()</li>
-                        </ul> 
-                    <dt>Kitchen service:</dt>
-                        <ul>
-                          <li>createTicket()</li>
-                          <li>confirmCreateTicket()</li>
-                          <li>cancelCreateTicket()</li>
-                        </ul> 
-                    <dt>Accounting Service</dt>
-                        <ul>
-                          <li>authorize()</li>
-                        </ul> 
-                </dl>
-            </td>
-            <td colspan="2">
-                <dl>
-                    <dt>Restaurant Service:</dt>
-                        <ul>
-                          <li>validateOrder()</li>
-                        </ul> 
-                    <dt>Kitchen service:</dt>
-                        <ul>
-                          <li>createTicket()</li>
-                          <li>confirmCreateTicket()</li>
-                          <li>cancelCreateTicket()</li>
-                        </ul> 
-                </dl>
-            </td>
-          </tr>
-        </table>
-        https://github.com/cer/microservice-canvas
+            <table>
+              <tr>
+                <th>Name:</th>
+                <th colspan="2">Order Service</th>
+              </tr>
+              <tr>
+                <td class="b">Description:</td>
+                <td colspan="2">The Order Service provides an API for creating, revising, and cancelling orders.</td>
+              </tr>
+              <tr>
+                <td class="b" colspan="3">Capabilities</td>
+              </tr>
+              <tr>
+                <td colspan="3">Order Management</td>
+              </tr>
+              <tr>
+                <td class="b" colspan="3">Service API</td>
+              </tr>
+              <tr>
+                <td>Commands</td>
+                <td>Queries</td>
+                <td>Events Published</td>
+              </tr>
+              <tr>
+                <td>
+                    <dl>
+                        <dt>Synchronous:</dt>
+                            <ul>
+                              <li>createOrder()</li>
+                              <li>reviseOrder()</li>
+                              <li>cancelOrder()</li>
+                            </ul>
+                        <dt>Asynchronous:</dt>
+                            <ul>
+                              <li>N/A</li>
+                            </ul>
+                    </dl>
+                </td>
+                <td>
+                    <dl>
+                        <dt>getOrder()</dt>
+                    </dl>
+                </td>
+                <td>
+                    <dl>
+                        <dt>Order event channel:</dt>
+                            <ul>
+                              <li>Order Created</li>
+                              <li>Order Authorized</li>
+                              <li>Order Revised</li>
+                              <li>Order Cancelled</li>
+                            </ul>
+                    </dl>
+                </td>
+              </tr>
+              <tr>
+                <td>Non-functional requirements</td>
+                <td colspan="2">
+                    <ul>
+                      <li>99.95% availability</li>
+                      <li>1000 orders/second</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="b" colspan="3">Observability</td>
+              </tr>
+              <tr>
+                <td colspan="3">Key metrics</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                    <ul>
+                      <li>placed order</li>
+                    </ul>
+                </td>
+              </tr>
+               <tr>
+                <td>Health check endpoint</td>
+                <td colspan="2">
+                    /actuator/health
+                </td>
+              </tr>
+              <tr>
+                <td class="b" colspan="3">Implementation</td>
+              </tr>
+              <tr>
+                <td colspan="3">Domain Model</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                     <ul>
+                      <li>Order aggregate</li>
+                    </ul>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="3">Domain Model</td>
+              </tr>
+              <tr>
+                <td colspan="3">Dependencies</td>
+              </tr>
+              <tr>
+                <td>Invokes</td>
+                <td colspan="2">Subscribes to</td>
+              </tr>
+              <tr>
+                <td>
+                    <dl>
+                        <dt>Consumer Service:</dt>
+                            <ul>
+                              <li>validateOrder()</li>
+                            </ul>
+                        <dt>Kitchen service:</dt>
+                            <ul>
+                              <li>createTicket()</li>
+                              <li>confirmCreateTicket()</li>
+                              <li>cancelCreateTicket()</li>
+                            </ul>
+                        <dt>Accounting Service</dt>
+                            <ul>
+                              <li>authorize()</li>
+                            </ul>
+                    </dl>
+                </td>
+                <td colspan="2">
+                    <dl>
+                        <dt>Restaurant Service:</dt>
+                            <ul>
+                              <li>validateOrder()</li>
+                            </ul>
+                        <dt>Kitchen service:</dt>
+                            <ul>
+                              <li>createTicket()</li>
+                              <li>confirmCreateTicket()</li>
+                              <li>cancelCreateTicket()</li>
+                            </ul>
+                    </dl>
+                </td>
+              </tr>
+            </table>
+            https://github.com/cer/microservice-canvas
+        </div>
     </body>
   </foreignObject>
   <!-- ... -->
