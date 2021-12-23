@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "address.proto";
+import "client.proto";
+
+option java_multiple_files = true;
+option java_package = "com.pb.proto.service";
+
+message ClientRequest {
+  int64 id = 1;
+}
+
+service ClientService{
+  rpc getClient(ClientRequest) returns (ClientMessage);
+}

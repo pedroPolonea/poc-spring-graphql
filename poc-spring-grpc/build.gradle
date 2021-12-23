@@ -40,6 +40,7 @@ dependencies {
 
 	implementation "io.grpc:grpc-all:$grpcVersion"
 	implementation "com.google.protobuf:protobuf-java:$protobufVersion"
+	implementation 'net.devh:grpc-spring-boot-starter:2.13.0.RELEASE'
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
