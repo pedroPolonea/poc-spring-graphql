@@ -1,14 +1,12 @@
 package com.poc.sg.domain.mapper;
 
-import com.poc.sg.domain.dto.ClientDTO;
-import com.poc.sg.domain.entity.Client;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDateTime;
-
-import static com.poc.sg.config.TestConfig.getFaker;
 import static com.poc.sg.domain.mapper.ClientMapper.clientDTOToEntity;
+import static com.poc.sg.domain.mapper.ClientMapper.entityToClientDTO;
+import static com.poc.sg.factory.ClientFactory.createClient;
+import static com.poc.sg.factory.ClientFactory.createClientDTO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -21,25 +19,19 @@ class ClientMapperTest {
         assertEquals(clientDTO.getId(), client.getId());
         assertEquals(clientDTO.getDocument(), client.getDocument());
         assertEquals(clientDTO.getBirthDate(), client.getBirthDate());
+        assertEquals(clientDTO.getName(), client.getName());
     }
 
     @Test
     void shouldMapperEntityToDto(){
+        final var client = createClient();
+        final var clientDTO = entityToClientDTO(client);
 
+        assertEquals(client.getId(), clientDTO.getId());
+        assertEquals(client.getDocument(), clientDTO.getDocument());
+        assertEquals(client.getBirthDate(), clientDTO.getBirthDate());
+        assertEquals(client.getName(), clientDTO.getName());
     }
 
-    private Client createClient(){
-        return new Client();
-    }
-
-    private ClientDTO createClientDTO(){
-        return ClientDTO.builder()
-                .birthDate(LocalDateTime.now().toString())
-                .id(getFaker().number().randomNumber())
-                .name(getFaker().name().name())
-                .document(getFaker().numerify("074########"))
-
-                .build();
-    }
 
 }

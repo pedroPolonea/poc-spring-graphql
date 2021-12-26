@@ -1,4 +1,4 @@
-package com.poc.sg.service.impl;
+package com.poc.sg.resource;
 
 
 import com.pb.proto.message.ClientMessage;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Objects;
 
 @GrpcService
-public class ClientServiceGrpcImpl extends ClientServiceGrpc.ClientServiceImplBase {
+public class ClientResource extends ClientServiceGrpc.ClientServiceImplBase {
 
     @Autowired
     private ClientService clientService;
