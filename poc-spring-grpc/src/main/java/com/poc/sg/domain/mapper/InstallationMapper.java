@@ -12,7 +12,7 @@ import static java.time.LocalDateTime.parse;
 
 public class InstallationMapper {
 
-    public static InstallationDTO entityToInstallationDTO(final Installation installation){
+    public static InstallationDTO entityToInstallationDTO(final Installation installation) {
         return InstallationDTO.builder()
                 .addressInstallation(entityToAddressDTO(installation.getAddressInstallation()))
                 .client(entityToClientDTO(installation.getClient()))
@@ -21,7 +21,7 @@ public class InstallationMapper {
                 .build();
     }
 
-    public static Installation installationDTOToEntity(final InstallationDTO installationDTO){
+    public static Installation installationDTOToEntity(final InstallationDTO installationDTO) {
         return new Installation(
                 installationDTO.getId(),
                 installationDTO.getCode(),

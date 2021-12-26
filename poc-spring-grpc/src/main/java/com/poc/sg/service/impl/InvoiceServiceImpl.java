@@ -33,12 +33,12 @@ public class InvoiceServiceImpl implements InvoiceService {
         return invoiceRepository.findByCode(code)
                 .orElseThrow(() -> {
                     log.error("M=findByCode, E=Invoice not found, code={}", code);
-                    return new RuntimeException("Invoice not found "+code);
+                    return new RuntimeException("Invoice not found " + code);
                 });
     }
 
     @Override
-    public List<Invoice> findByDocument(String document) {
+    public List<Invoice> findByDocument(final String document) {
         final List<Installation> installations = installationService.findByDocument(document);
         List<Invoice> invoiceList = new ArrayList<Invoice>();
 
@@ -54,7 +54,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public Invoice save(Invoice invoice) {
+    public Invoice save(final Invoice invoice) {
         final Installation installation = installationService.findByCode(invoice.getInstallation().getCode());
         invoice.setInstallation(installation);
         installation.getInvoiceList().add(invoice);

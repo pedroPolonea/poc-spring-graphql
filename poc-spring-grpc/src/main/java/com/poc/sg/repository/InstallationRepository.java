@@ -11,9 +11,7 @@ import java.util.Optional;
 @Repository
 public interface InstallationRepository extends JpaRepository<Installation, Long> {
 
-	public Optional<Installation> findByCode(final String code);
+	Optional<Installation> findByCode(String code);
 
-	public List<Installation> findByClient(final Client client);
-	
-	
+	List<Installation> findByClient(Client client);
 }

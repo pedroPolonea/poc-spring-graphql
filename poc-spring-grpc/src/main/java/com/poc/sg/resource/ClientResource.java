@@ -20,7 +20,7 @@ public class ClientResource extends ClientServiceGrpc.ClientServiceImplBase {
     private ClientService clientService;
 
     @Override
-    public void getClient(ClientRequest request, StreamObserver<ClientMessage> responseObserver) {
+    public void getClient(final ClientRequest request, final StreamObserver<ClientMessage> responseObserver) {
         Client client = clientService.findById(request.getId());
 
         if (Objects.nonNull(client)) {

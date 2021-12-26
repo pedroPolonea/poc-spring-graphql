@@ -9,7 +9,7 @@ import static java.time.LocalDateTime.parse;
 
 public class ClientMapper {
 
-    public static Client clientDTOToEntity(final ClientDTO clientDTO){
+    public static Client clientDTOToEntity(final ClientDTO clientDTO) {
         return new Client(
                 clientDTO.getId(),
                 clientDTO.getName(),
@@ -20,7 +20,7 @@ public class ClientMapper {
         );
     }
 
-    public static ClientDTO entityToClientDTO(final Client client){
+    public static ClientDTO entityToClientDTO(final Client client) {
         return ClientDTO.builder()
                 .birthDate(client.getBirthDate().toString())
                 .document(client.getDocument())

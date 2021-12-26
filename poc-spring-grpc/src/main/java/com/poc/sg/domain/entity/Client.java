@@ -47,6 +47,6 @@ public class Client {
 	@JsonIgnore
 	@JsonBackReference
 	@OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Installation> Installations = new ArrayList<Installation>();
+	private List<Installation> installations = new ArrayList<Installation>();
 
 }

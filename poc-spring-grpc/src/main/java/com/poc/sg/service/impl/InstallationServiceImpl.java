@@ -27,25 +27,25 @@ public class InstallationServiceImpl implements InstallationService {
     }
 
     @Override
-    public Installation findByCode(String code) {
+    public Installation findByCode(final String code) {
         log.info("M=findClientByDocument, code={}", code);
 
         return installationRepository.findByCode(code)
                 .orElseThrow(() -> {
                     log.error("M=findClientByDocument, E=Installation not found, code={}", code);
-                    return new RuntimeException("Installation not found "+code);
+                    return new RuntimeException("Installation not found " + code);
                 });
     }
 
     @Override
-    public List<Installation> findByDocument(String document) {
+    public List<Installation> findByDocument(final String document) {
         log.info("M=findInstallationByDocument, document={}", document);
         final Client client = clientService.findByDocument(document);
         return installationRepository.findByClient(client);
     }
 
     @Override
-    public Installation save(Installation installation) {
+    public Installation save(final Installation installation) {
         log.info("M=save, installation={}", installation);
 
         final Client client = clientService.findById(installation.getClient().getId());

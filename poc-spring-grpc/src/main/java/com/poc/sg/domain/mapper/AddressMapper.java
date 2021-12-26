@@ -5,7 +5,7 @@ import com.poc.sg.domain.entity.Address;
 
 public class AddressMapper {
 
-    public static Address addressDTOToEntity(final AddressDTO addressDTO){
+    public static Address addressDTOToEntity(final AddressDTO addressDTO) {
         return new Address(
                 addressDTO.getId(),
                 addressDTO.getAddress(),
@@ -16,7 +16,7 @@ public class AddressMapper {
         );
     }
 
-    public static AddressDTO entityToAddressDTO(final Address address){
+    public static AddressDTO entityToAddressDTO(final Address address) {
         return AddressDTO.builder()
                 .city(address.getCity())
                 .district(address.getDistrict())

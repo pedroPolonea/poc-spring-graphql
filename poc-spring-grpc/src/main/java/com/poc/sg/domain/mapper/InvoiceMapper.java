@@ -9,7 +9,7 @@ import static java.time.LocalDateTime.parse;
 
 public class InvoiceMapper {
 
-    public static Invoice invoiceDTOToEntity(final InvoiceDTO invoiceDTO){
+    public static Invoice invoiceDTOToEntity(final InvoiceDTO invoiceDTO) {
         return new Invoice(
                 invoiceDTO.getId(),
                 invoiceDTO.getCode(),
@@ -21,7 +21,7 @@ public class InvoiceMapper {
         );
     }
 
-    public static InvoiceDTO entityToInvoiceDTO(final Invoice invoice){
+    public static InvoiceDTO entityToInvoiceDTO(final Invoice invoice) {
         return InvoiceDTO.builder()
                 .id(invoice.getId())
                 .dueDate(invoice.getDueDate().toString())

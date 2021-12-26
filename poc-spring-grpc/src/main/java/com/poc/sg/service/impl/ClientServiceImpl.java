@@ -29,7 +29,7 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findByDocument(document)
                 .orElseThrow(() -> {
                     log.error("M=findClientByDocument, E=Client not found, document={}", document);
-                    return new RuntimeException("Client not found "+document);
+                    return new RuntimeException("Client not found " + document);
                 });
     }
 
@@ -39,7 +39,7 @@ public class ClientServiceImpl implements ClientService {
         return clientRepository.findById(id)
                 .orElseThrow(() -> {
                     log.error("M=findClientByDocument, E=Client not found, document={}", id);
-                    return new RuntimeException("Client not found "+id);
+                    return new RuntimeException("Client not found " + id);
                 });
     }
 
