@@ -1,5 +1,7 @@
 package com.poc.sg.factory;
 
+import com.pb.proto.message.AddressMessage;
+import com.pb.proto.message.ClientMessage;
 import com.poc.sg.domain.dto.ClientDTO;
 import com.poc.sg.domain.entity.Client;
 
@@ -30,5 +32,14 @@ public class ClientFactory {
                 createAddress(),
                 null
         );
+    }
+
+    public static ClientMessage createMessage(final AddressMessage addressMessage) {
+        return ClientMessage.newBuilder()
+                .setName(getFaker().name().name())
+                .setBirthDate(LocalDateTime.now().toString())
+                .setDocument(getFaker().numerify("074########"))
+                .setAddressCharge(addressMessage)
+                .build();
     }
 }

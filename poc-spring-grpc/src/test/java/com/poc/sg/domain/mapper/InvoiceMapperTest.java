@@ -23,8 +23,8 @@ class InvoiceMapperTest {
         assertEquals(invoiceDTO.getCode(), invoice.getCode());
         assertEquals(invoiceDTO.getAccountValue(), invoice.getAccountValue());
         assertEquals(invoiceDTO.getNumberReading(), invoice.getNumberReading());
-        assertEquals(LocalDateTime.parse(invoiceDTO.getReadingDate()), invoice.getReadingDate());
         assertEquals(LocalDateTime.parse(invoiceDTO.getDueDate()), invoice.getDueDate());
+        assertEquals(LocalDateTime.parse(invoiceDTO.getReadingDate()), invoice.getReadingDate());
     }
 
     @Test
@@ -34,8 +34,8 @@ class InvoiceMapperTest {
 
         assertEquals(invoice.getCode(), invoiceDTO.getCode());
         assertEquals(invoice.getAccountValue(), invoiceDTO.getAccountValue());
+        assertEquals(invoice.getDueDate().toString(), invoiceDTO.getDueDate());
         assertEquals(invoice.getNumberReading(), invoiceDTO.getNumberReading());
         assertEquals(invoice.getReadingDate().toString(), invoiceDTO.getReadingDate());
-        assertEquals(invoice.getDueDate().toString(), invoiceDTO.getDueDate());
     }
 }

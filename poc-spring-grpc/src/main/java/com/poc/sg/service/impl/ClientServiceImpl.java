@@ -45,6 +45,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client save(final Client client) {
+        log.info("M=save, client={}", client);
         return clientRepository.save(client);
     }
 }

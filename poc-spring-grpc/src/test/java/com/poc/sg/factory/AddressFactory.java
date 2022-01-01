@@ -1,5 +1,6 @@
 package com.poc.sg.factory;
 
+import com.pb.proto.message.AddressMessage;
 import com.poc.sg.domain.dto.AddressDTO;
 import com.poc.sg.domain.entity.Address;
 
@@ -27,5 +28,15 @@ public class AddressFactory {
                 getFaker().nation().capitalCity(),
                 "BR"
         );
+    }
+
+    public static AddressMessage createMessage() {
+        return AddressMessage.newBuilder()
+                .setAddress(getFaker().country().name())
+                .setCity(getFaker().nation().capitalCity())
+                .setDistrict(getFaker().nation().nationality())
+                .setNumber(getFaker().number().randomNumber())
+                .setFederativeUnit("BR")
+                .build();
     }
 }
