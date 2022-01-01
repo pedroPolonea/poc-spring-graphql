@@ -33,7 +33,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	//implementation "io.grpc:grpc-all:$grpcVersion"
+	implementation "io.grpc:grpc-all:$grpcVersion"
 	implementation "com.google.protobuf:protobuf-java:$protobufVersion"
 	implementation 'net.devh:grpc-spring-boot-starter:2.13.0.RELEASE'
 	implementation 'com.github.javafaker:javafaker:1.0.2'
@@ -48,6 +48,7 @@ dependencies {
 
 	testImplementation 'org.projectlombok:lombok'
 	testAnnotationProcessor'org.projectlombok:lombok'
+	testRuntimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

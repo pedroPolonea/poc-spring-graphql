@@ -2,17 +2,19 @@ package com.poc.sg.domain.mapper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import static com.poc.sg.domain.mapper.AddressMapper.addressDTOToEntity;
 import static com.poc.sg.factory.AddressFactory.createAddress;
 import static com.poc.sg.factory.AddressFactory.createAddressDTO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class AddressMapperTest {
 
     @Test
-    void shouldMapperDtoToEntity(){
+    void shouldMapperDtoToEntity() {
         final var addressDTO = createAddressDTO();
         final var address = addressDTOToEntity(addressDTO);
 
@@ -25,7 +27,7 @@ class AddressMapperTest {
     }
 
     @Test
-    void shouldMapperEntityToDto(){
+    void shouldMapperEntityToDto() {
         final var address = createAddress();
         final var addressDTO = AddressMapper.entityToAddressDTO(address);
 
@@ -36,7 +38,4 @@ class AddressMapperTest {
         assertEquals(addressDTO.getNumber(), address.getNumber());
         assertEquals(addressDTO.getId(), address.getId());
     }
-
-
-
 }

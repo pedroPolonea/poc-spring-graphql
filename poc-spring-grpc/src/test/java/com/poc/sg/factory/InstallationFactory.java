@@ -11,7 +11,7 @@ import static com.poc.sg.factory.AddressFactory.createAddressDTO;
 
 public class InstallationFactory {
 
-    public static InstallationDTO createInstallationDTO(){
+    public static InstallationDTO createInstallationDTO() {
         return InstallationDTO.builder()
                 .dataInstallation(LocalDateTime.now().toString())
                 .code(getFaker().numerify("123###09"))
@@ -21,7 +21,7 @@ public class InstallationFactory {
                 .build();
     }
 
-    public static Installation createInstallation(){
+    public static Installation createInstallation() {
         return new Installation(
                 getFaker().number().randomNumber(),
                 getFaker().numerify("123###09"),

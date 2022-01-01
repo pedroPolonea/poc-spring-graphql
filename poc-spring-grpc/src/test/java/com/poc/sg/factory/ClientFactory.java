@@ -11,7 +11,7 @@ import static com.poc.sg.factory.AddressFactory.createAddressDTO;
 
 public class ClientFactory {
 
-    public static ClientDTO createClientDTO(){
+    public static ClientDTO createClientDTO() {
         return ClientDTO.builder()
                 .birthDate(LocalDateTime.now().toString())
                 .id(getFaker().number().randomNumber())
@@ -21,7 +21,7 @@ public class ClientFactory {
                 .build();
     }
 
-    public static Client createClient(){
+    public static Client createClient() {
         return new Client(
                 getFaker().number().randomNumber(),
                 getFaker().name().name(),

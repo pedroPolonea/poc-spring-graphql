@@ -12,7 +12,7 @@ import static com.poc.sg.factory.InstallationFactory.createInstallationDTO;
 
 public class InvoiceFactory {
 
-    public static InvoiceDTO createInvoiceDTO(){
+    public static InvoiceDTO createInvoiceDTO() {
         return InvoiceDTO.builder()
                 .readingDate(LocalDateTime.now().toString())
                 .dueDate(LocalDateTime.now().toString())
@@ -24,7 +24,7 @@ public class InvoiceFactory {
                 .build();
     }
 
-    public static Invoice createInvoice(){
+    public static Invoice createInvoice() {
         return new Invoice(
                 getFaker().number().randomNumber(),
                 getFaker().numerify("90###09"),

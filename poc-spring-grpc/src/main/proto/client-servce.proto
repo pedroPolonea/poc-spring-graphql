@@ -2,16 +2,16 @@ syntax = "proto3";
 
 import "address.proto";
 import "client.proto";
+import "response-default.proto";
 
 option java_multiple_files = true;
 option java_package = "com.pb.proto.service";
 
 package com.spring.poc.grpc;
 
-message ClientRequest {
-  int64 id = 1;
-}
-
 service ClientService{
   rpc getClient(ClientRequest) returns (ClientMessage);
+  rpc create(ClientMessage) returns (ClientMessage);
+  rpc update(ClientMessage) returns (ClientMessage);
+  rpc delete(ClientRequest) returns (ActionResponse);
 }

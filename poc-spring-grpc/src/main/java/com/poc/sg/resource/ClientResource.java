@@ -1,17 +1,14 @@
 package com.poc.sg.resource;
 
 
+import com.pb.proto.message.ActionResponse;
 import com.pb.proto.message.ClientMessage;
-import com.pb.proto.service.ClientRequest;
+import com.pb.proto.message.ClientRequest;
 import com.pb.proto.service.ClientServiceGrpc;
-import com.poc.sg.domain.entity.Client;
 import com.poc.sg.service.ClientService;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-
-import java.util.Objects;
 
 @GrpcService
 public class ClientResource extends ClientServiceGrpc.ClientServiceImplBase {
@@ -21,17 +18,21 @@ public class ClientResource extends ClientServiceGrpc.ClientServiceImplBase {
 
     @Override
     public void getClient(final ClientRequest request, final StreamObserver<ClientMessage> responseObserver) {
-        Client client = clientService.findById(request.getId());
+        super.getClient(request, responseObserver);
+    }
 
-        if (Objects.nonNull(client)) {
-            var clientMessage = ClientMessage.newBuilder()
-                    .setDocument(client.getDocument())
-                    .setId(client.getId())
-                    .setBirthDate(client.getBirthDate().toString())
-                    .setName(client.getName());
+    @Override
+    public void create(final ClientMessage request, final StreamObserver<ClientMessage> responseObserver) {
+        super.create(request, responseObserver);
+    }
 
-            responseObserver.onNext(clientMessage.build());
-            responseObserver.onCompleted();
-        }
+    @Override
+    public void update(final ClientMessage request, final StreamObserver<ClientMessage> responseObserver) {
+        super.update(request, responseObserver);
+    }
+
+    @Override
+    public void delete(final ClientRequest request, final StreamObserver<ActionResponse> responseObserver) {
+        super.delete(request, responseObserver);
     }
 }

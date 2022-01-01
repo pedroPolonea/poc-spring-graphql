@@ -26,6 +26,7 @@ public class ClientMapper {
                 .document(client.getDocument())
                 .addressCharge(entityToAddressDTO(client.getAddressCharge()))
                 .name(client.getName())
+                .id(client.getId())
                 .build();
     }
 }

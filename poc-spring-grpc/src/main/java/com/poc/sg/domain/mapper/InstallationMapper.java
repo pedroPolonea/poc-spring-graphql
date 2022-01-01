@@ -18,6 +18,7 @@ public class InstallationMapper {
                 .client(entityToClientDTO(installation.getClient()))
                 .dataInstallation(installation.getDataInstallation().toString())
                 .code(installation.getCode())
+                .id(installation.getId())
                 .build();
     }
 

@@ -12,3 +12,7 @@ message ClientMessage{
   string birthDate = 4;
   AddressMessage addressCharge = 5;
 }
+
+message ClientRequest {
+  int64 id = 1;
+}

@@ -4,4 +4,6 @@
         "https://checkstyle.org/dtds/suppressions_1_0.dtd">
 <suppressions>
     <suppress files="SpringCheckStyleApp.java" checks="HideUtilityClassConstructor" />
+    <suppress files=".*(?:Test|TestBase)\.java$" checks="TreeWalker.MagicNumber"/>
+    <suppress checks="MagicNumber" files=".*[/\\]src[/\\]test[/\\]"/>
 </suppressions>

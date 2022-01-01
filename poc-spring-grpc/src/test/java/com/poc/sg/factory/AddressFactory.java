@@ -7,7 +7,7 @@ import static com.poc.sg.config.TestConfig.getFaker;
 
 public class AddressFactory {
 
-    public static AddressDTO createAddressDTO(){
+    public static AddressDTO createAddressDTO() {
         return AddressDTO.builder()
                 .address(getFaker().country().name())
                 .district(getFaker().nation().nationality())
@@ -18,7 +18,7 @@ public class AddressFactory {
                 .build();
     }
 
-    public static Address createAddress(){
+    public static Address createAddress() {
         return new Address(
                 getFaker().number().randomNumber(),
                 getFaker().country().name(),

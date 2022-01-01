@@ -15,11 +15,11 @@ public class TestConfig {
 
     private static Faker faker;
 
-    public static Faker getFaker(){
-        if(Objects.isNull(faker)){
+    public static Faker getFaker() {
+        if (Objects.isNull(faker)) {
             var seed = Timestamp.valueOf(LocalDateTime.now()).getTime();
 
-            log.info("M=getFaker, seed={}",seed);
+            log.info("M=getFaker, seed={}", seed);
 
             final Random generate = new Random(seed);
             faker = new Faker(generate);
@@ -28,6 +28,4 @@ public class TestConfig {
         }
         return faker;
     }
-
-
 }
