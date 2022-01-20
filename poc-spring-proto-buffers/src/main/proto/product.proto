@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.sb.pb.proto";
+
+message Product{
+  string name = 1;
+  string description = 2;
+  int32 amount = 3;
+  bool active = 4;
+  ProductType productType = 5;
+}
+enum ProductType{
+  ELECTRONICS = 0;
+  HOME_APPLIANCES = 1;
+  KITCHEN = 2;
+  BATHROOM = 3;
+}
