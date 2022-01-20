@@ -1,8 +1,12 @@
 package com.poc.sg.domain.mapper;
 
 import com.pb.proto.message.ClientMessage;
+import com.pb.proto.message.ClientMessageList;
 import com.poc.sg.domain.dto.ClientDTO;
 import com.poc.sg.domain.entity.Client;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.poc.sg.domain.mapper.AddressMapper.addressDTOToEntity;
 import static com.poc.sg.domain.mapper.AddressMapper.addressMessageToEntity;
@@ -51,6 +55,17 @@ public class ClientMapper {
                 .setDocument(client.getDocument())
                 .setAddressCharge(entityToAddressMessage(client.getAddressCharge()))
                 .setId(client.getId())
+                .build();
+    }
+
+    public static ClientMessageList entityListToClientMessageList(final List<Client> clients) {
+
+
+        return ClientMessageList.newBuilder()
+                .addAllClientMessage(
+                        clients.stream()
+                            .map(ClientMapper::entityToClientMessage)
+                            .collect(Collectors.toList()))
                 .build();
     }
 }

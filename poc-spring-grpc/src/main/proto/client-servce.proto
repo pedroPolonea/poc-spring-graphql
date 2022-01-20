@@ -14,4 +14,6 @@ service ClientService{
   rpc create(ClientMessage) returns (ClientMessage);
   rpc update(ClientMessage) returns (ClientMessage);
   rpc delete(ClientRequest) returns (ActionResponse);
+  rpc getClients(EmptyRequest) returns (ClientMessageList);
+  rpc getClientFilter(ClientMessage) returns (ClientMessageList);
 }

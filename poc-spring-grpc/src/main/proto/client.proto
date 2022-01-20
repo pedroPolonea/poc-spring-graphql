@@ -16,3 +16,7 @@ message ClientMessage{
 message ClientRequest {
   int64 id = 1;
 }
+
+message ClientMessageList{
+  repeated ClientMessage clientMessage = 1;
+}

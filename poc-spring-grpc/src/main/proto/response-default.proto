@@ -8,3 +8,6 @@ message ActionResponse{
   string message = 2;
   string code = 3;
 }
+
+message EmptyRequest{}
+message EmptyResponse{}
