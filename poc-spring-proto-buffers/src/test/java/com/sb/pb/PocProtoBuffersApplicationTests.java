@@ -4,7 +4,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.sb.pb.dto.ProductDto;
 import com.sb.pb.dto.ProductTypeDto;
-import com.sb.pb.proto.*;
+
+import com.sb.pb.proto.OrderedItem;
+import com.sb.pb.proto.Product;
+import com.sb.pb.proto.ProductType;
+import com.sb.pb.proto.SalesOrder;
+import com.sb.pb.proto.Seller;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
